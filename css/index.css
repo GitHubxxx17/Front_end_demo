@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rbga(0, 0, 0, 0);
+}
+body {
+  font-family: '微软雅黑';
+  background-size: cover;
+}
+img {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+ol,
+ul {
+  list-style: none;
+}
+input,
+button,
+select,
+textarea {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+/*禁用了文本的拖拉，尤其在谷歌下*/
+textarea {
+  resize: none;
+}
+/*为了使文本段落左右两边对齐*/
+p {
+  text-align: justify;
+  text-justify: distribute;
+}
+/*======== Link ========*/
+a {
+  color: #333;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+/*清空浮动的代码-start*/
+.clr:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.clr {
+  *zoom: 1;
+}
+/*清空浮动的代码-end*/
+/* 页面元素初始化和常用样式定义-end */
+/* 全局默认鼠标指针 */
+body,
+html,
+label {
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/arrow.cur'), auto !important;
+}
+/* 悬停图片时的鼠标指针 */
+img {
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/btn.cur'), auto !important;
+}
+/* 选择链接标签时的鼠标指针 */
+a:hover {
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/link.cur'), auto;
+}
+/* 选中输入框时的鼠标指针 */
+input:hover {
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/input.cur'), auto;
+}
+/* 悬停按钮时的鼠标指针 */
+button:hover {
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/btn.cur'), auto;
+}
+/* 悬停列表标签时的鼠标指针 */
+i:hover {
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/link.cur'), auto;
+}
+/* 悬停页脚链接标签（例如页脚徽标）时的鼠标指针 */
+#footer-wrap a:hover {
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/hf.cur'), auto;
+}
+/* 悬停页码时的鼠标指针 */
+#pagination .page-number:hover {
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/i.cur'), auto;
+}
+/* 悬停菜单栏时的鼠标指针 */
+#nav .site-page:hover {
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/hf.cur'), auto;
+}
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.scroll_box {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+section .sec_title {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  font-size: 2vw;
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+.bg1 {
+  background-image: url(../images/14.jpg);
+}
+.bg2 {
+  background-image: url(../images/15.jpg);
+}
+.slide {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+}
+.slide li {
+  position: relative;
+  padding-top: 10px;
+  width: 50px;
+  height: 60px;
+  border-radius: 0 0 50px 50px;
+  background-size: cover;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+.slide li .cirle {
+  position: relative;
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/link.cur'), auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #d5d4d2;
+}
+.slide .active::after {
+  position: absolute;
+  cursor: url('https://npm.elemecdn.com/akilar-candyassets/image/cur/link.cur'), auto;
+  top: 0;
+  left: -2px;
+  content: '';
+  width: 55px;
+  height: 55px;
+  background-image: url(../images/2.png);
+  background-position: center;
+  background-size: cover;
+  animation: activeup 0.5s ease-in-out;
+}
+@keyframes activeup {
+  0% {
+    top: 50px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
