@@ -87,3 +87,7 @@ $('.controls_btn').onclick = (e) => {
 $('.controls').onclick = (e) => {
   e.stopPropagation()
 }
+
+$('.controls').ontouchend = (e) => {
+  e.stopPropagation()
+}
