@@ -1,4 +1,4 @@
-
+let color = ['#e1bee7','#bbdefb','#000000','#292B25'];
 let sectionTopArr = [];
 let index = 0;
 let flag = true;
@@ -89,6 +89,7 @@ for (let i = 0; i < $('.slide li').length; i++) {
             top: sectionTopArr[i],
             behavior: "smooth"
         });
+        $('.scroll_box').style.backgroundColor = color[i];
         index = i;
         // titleAni(i);
         $('.slide li')[i].style.animation = 'jello-horizontal 0.9s linear';
@@ -99,10 +100,15 @@ for (let i = 0; i < $('.slide li').length; i++) {
 
 function titleAni(index){
     if(index == 0){
-        $('section')[0].style.transform = 'rotateX(0)';
+        // $('section')[0].style.transform = 'rotateX(0)';
     }
     if(index == 1){
         // $('.title')[0].style.top = 150+'px';
         // $('section')[0].style.transform = 'rotateX(90deg)';
     }
+    if(index == 3) {
+        $('.sec_title').style.color = '#fff';
+    }else{
+        $('.sec_title').style.color = '#000';
+    } 
 }

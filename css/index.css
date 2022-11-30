@@ -107,6 +107,8 @@ body::-webkit-scrollbar {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-color: #e1bee7;
+  transition: all 0.5s ease-in-out;
 }
 section {
   position: relative;
@@ -127,11 +129,14 @@ section .sec_title {
   font-weight: 700;
   transform: translateX(-50%);
 }
-.bg1 {
-  background-image: url(../images/14.jpg);
+section:nth-child(3) {
+  background-image: url(../images/n.jpeg);
 }
-.bg2 {
-  background-image: url(../images/15.jpg);
+section:nth-child(3) .sec_title {
+  color: rgba(223, 223, 223, 0.854);
+}
+section:nth-child(4) .sec_title {
+  color: #fff;
 }
 .slide {
   position: absolute;
@@ -155,7 +160,19 @@ section .sec_title {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #d5d4d2;
+  transition: all 0.5s;
+}
+.slide li:nth-child(1) .cirle {
+  background-color: #e1bee7;
+}
+.slide li:nth-child(2) .cirle {
+  background-color: #bbdefb;
+}
+.slide li:nth-child(3) .cirle {
+  background-color: #c8e6c9;
+}
+.slide li:nth-child(4) .cirle {
+  background-color: #ffe0b2;
 }
 .slide .active::after {
   position: absolute;
@@ -169,6 +186,9 @@ section .sec_title {
   background-position: center;
   background-size: cover;
   animation: activeup 0.5s ease-in-out;
+}
+.slide .active .cirle {
+  background-color: #d5d4d2 !important;
 }
 @keyframes activeup {
   0% {
