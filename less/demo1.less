@@ -719,7 +719,7 @@
     .controls {
         position: absolute;
         top: 0;
-        left: 0;
+        left: -200px;
         z-index: 1;
         width: 200px;
         height: 100%;
@@ -727,6 +727,26 @@
         color: #333;
         text-transform: uppercase;
         background-color: rgba(220, 220, 220, 0.5);
+        transition: all .3s;
+        
+    }
+
+    .controls_btn {
+            position: absolute;
+            top: 20%;
+            right: 0;
+            transform: translate(100%,-50%);
+            background-color: #73c9ff;
+            width: 20%;
+            height: 10%;
+            writing-mode:vertical-rl; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.3rem;
+            border-radius: 0 10px 10px 0;
     }
 
     .controls .title {

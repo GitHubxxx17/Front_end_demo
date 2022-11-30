@@ -1,3 +1,31 @@
+function IsPC() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+        "SymbianOS", "Windows Phone",
+        "iPad", "iPod"];
+    var flagPc = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flagPc = false;
+            break;
+        }
+    }
+    return flagPc;
+}
+var flagZt = IsPC();
+console.log(flagZt) //true为PC端，false为手机端
+if(!flagZt){
+    $('.demo0 .floor').style.width = '70%';
+    $('.demo1 .minipeople').style.width = '100%';
+    $('.demo1 .minipeople').style.height = '100%';
+    for(let x of $('.sec_title')){
+        x.style.fontSize = '30px';
+    }
+    $('.demo2 .fireworkArea').style.width = '100%';
+    // $('.demo1 .fireworkArea').style.height = '100%';
+}
+$('.demo1 .minipeople').style.width = '100%';
+$('.demo1 .minipeople').style.height = '100%';
 let color = ['#e1bee7','#bbdefb','#000000','#292B25'];
 let sectionTopArr = [];
 let index = 0;
@@ -68,12 +96,16 @@ window.ontouchstart = (e) => {
         if (y2 - y1 < -10) {
             if (index < sectionTopArr.length - 1)
                 index++;
+                $('.slide li')[index].onclick();
         } else if(y2 - y1 > 10){
             if (index > 0)
                 index--;
+                $('.slide li')[index].onclick();
         }
         console.log(index);
-        scroll2();
+        // scroll2();
+        // $('.scroll_box').style.backgroundColor = color[index];
+        
     }
 }
 
@@ -96,19 +128,14 @@ for (let i = 0; i < $('.slide li').length; i++) {
     }
 }
 
-
-
 function titleAni(index){
-    if(index == 0){
-        // $('section')[0].style.transform = 'rotateX(0)';
-    }
-    if(index == 1){
-        // $('.title')[0].style.top = 150+'px';
-        // $('section')[0].style.transform = 'rotateX(90deg)';
-    }
     if(index == 3) {
         $('.sec_title').style.color = '#fff';
     }else{
         $('.sec_title').style.color = '#000';
     } 
 }
+
+
+
+

@@ -72,3 +72,18 @@ function setColors() {
   upperBody.style.color = 'hsl(' + upperHueVal + ',' + upperSaturationVal + '%,' + upperLightnessVal + '%)';
   lowerBody.style.color = 'hsl(' + lowerHueVal + ',' + lowerSaturationVal + '%,' + lowerLightnessVal + '%)';
 };
+
+window.onclick = () => {
+  $('.demo1 .controls').style.left = '-200px';
+  $('.controls_btn').style.display = 'flex';
+}
+
+$('.controls_btn').onclick = (e) => {
+  $('.demo1 .controls').style.left = '0';
+  $('.controls_btn').style.display = 'none';
+  e.stopPropagation()
+}
+
+$('.controls').onclick = (e) => {
+  e.stopPropagation()
+}
